@@ -5,9 +5,9 @@ import {
   Text,
 } from 'react-native';
 
-const Texto = () => {
+const Texto = ({texto}) => {
   return (
-    <Text>Hola Mundo!</Text>
+    <Text>{texto}</Text>
   )
 }
 
@@ -15,7 +15,8 @@ const App = () => {
   return (
     <>
       <View style={styles.container}>
-        <Texto />
+        <Texto texto={'Hola mundo!'} />
+        <Texto texto={'Olá mundo!'} />
       </View>
 
     </>
