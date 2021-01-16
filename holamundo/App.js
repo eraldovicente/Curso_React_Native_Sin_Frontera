@@ -5,9 +5,12 @@ import {
   Text,
 } from 'react-native';
 
-const Texto = ({texto}) => {
+const Texto = (props) => {
+
+  const {children} = props;
+
   return (
-    <Text>{texto}</Text>
+    <Text>{children}</Text>
   )
 }
 
@@ -15,8 +18,10 @@ const App = () => {
   return (
     <>
       <View style={styles.container}>
-        <Texto texto={'Hola mundo!'} />
-        <Texto texto={'Olá mundo!'} />
+        <Texto>
+          Hola mundo!
+          <Texto> Olá mundo!</Texto>
+        </Texto>
       </View>
 
     </>
