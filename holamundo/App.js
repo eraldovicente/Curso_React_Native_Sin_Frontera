@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
   Text,
 } from 'react-native';
 
-const Texto = (props) => {
+const Texto = ( ) => {
 
-  const {children} = props;
+  const [texto, setTexto] = useState("Hola mundo!");
+
+  const actualizaTexto = () => {
+    setTexto('Olá mundo!');
+  }
 
   return (
-    <Text>{children}</Text>
+    <Text onPress={actualizaTexto}>{texto}</Text>
   )
 }
 
@@ -18,10 +22,7 @@ const App = () => {
   return (
     <>
       <View style={styles.container}>
-        <Texto>
-          Hola mundo!
-          <Texto> Olá mundo!</Texto>
-        </Texto>
+        <Texto/>
       </View>
 
     </>
