@@ -3,19 +3,27 @@ import {
   StyleSheet,
   View,
   Text,
-  ActivityIndicator
+  ActivityIndicator,
+  Image
 } from 'react-native';
 
 const App = () => {
 
   return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <Image
+          style={styles.photo}
+          source={{ uri: 'https://placekitten.com/200/200'}}
+        />
       </View>
   );
 };
 
 const styles = StyleSheet.create({
+  photo: {
+    height: 200,
+    width: 200
+  },
   container: {
     flex: 1,
     backgroundColor: '#FFF',
