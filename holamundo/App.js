@@ -14,7 +14,7 @@ const Texto = ( ) => {
   }
 
   return (
-    <Text onPress={actualizaTexto}>{texto}</Text>
+    <Text style={{fontSize: 50}} onPress={actualizaTexto}>{texto}</Text>
   )
 }
 
