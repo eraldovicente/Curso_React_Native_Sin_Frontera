@@ -39,22 +39,20 @@ const styles = StyleSheet.create({
     width: 100
   },
   red: {
-    flex: 1,
     backgroundColor: 'red'
   },
   green: {
-    flex: 2,
     backgroundColor: 'green'
   },
   blue: {
-    flex: 3,
     backgroundColor: 'blue'
   },
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#FFF',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'space-between'
   }
 });
 
