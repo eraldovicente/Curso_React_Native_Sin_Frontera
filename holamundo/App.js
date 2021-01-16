@@ -4,17 +4,19 @@ import {
   View,
   Text,
   ActivityIndicator,
-  Image
+  ImageBackground
 } from 'react-native';
 
 const App = () => {
 
   return (
       <View style={styles.container}>
-        <Image
+        <ImageBackground
           style={styles.photo}
           source={{ uri: 'https://placekitten.com/200/200'}}
-        />
+        >
+          <Text>fasdfdfdsfdfgfd</Text>
+        </ImageBackground>
       </View>
   );
 };
