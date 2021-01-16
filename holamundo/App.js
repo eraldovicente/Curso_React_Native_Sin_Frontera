@@ -6,7 +6,8 @@ import {
   TextInput,
   Dimensions,
   Button,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  ScrollView
 } from 'react-native';
 
 const width = Dimensions.get('window').width
@@ -17,27 +18,26 @@ const App = () => {
   const [submit, setSubmit] = useState('');
 
   return (
-    <>
       <View style={styles.container}>
-        <Text>Texto: {submit}</Text>
-        <TextInput 
-          style={styles.input} 
-          placeholder='Escribe acá'
-          onChangeText={t => setText(t)}
-          defaultValue={text}
-        />
-        <TouchableWithoutFeedback
-          style={styles.TouchableOpacity}
-          onPress={() => {
-            setSubmit(text)
-            alert('Texto enviado con exito')
-          }}
-        >
-          <View style={styles.view}><Text>Aceptar</Text></View>
-        </TouchableWithoutFeedback>
+        <ScrollView>
+          <Text>Texto: {submit}</Text>
+          <TextInput 
+            style={styles.input} 
+            placeholder='Escribe acá'
+            onChangeText={t => setText(t)}
+            defaultValue={text}
+          />
+          <TouchableWithoutFeedback
+            style={styles.TouchableOpacity}
+            onPress={() => {
+              setSubmit(text)
+              alert('Texto enviado con exito')
+            }}
+          >
+            <View style={styles.view}><Text>Aceptar</Text></View>
+          </TouchableWithoutFeedback>
+        </ScrollView>
       </View>
-
-    </>
   );
 };
 
@@ -60,6 +60,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  scrollView: {
+    width: Dimensions.get('window').width
   }
 });
 
