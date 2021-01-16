@@ -3,66 +3,41 @@ import {
   StyleSheet,
   View,
   Text,
-  TextInput,
-  Dimensions,
-  Button,
-  TouchableWithoutFeedback,
-  ScrollView
+  FlatList
 } from 'react-native';
-
-const width = Dimensions.get('window').width
 
 const App = () => {
 
-  const [text, setText] = useState('Chanchito feliz');
-  const [submit, setSubmit] = useState('');
-
   return (
       <View style={styles.container}>
-        <ScrollView>
-          <Text>Texto: {submit}</Text>
-          <TextInput 
-            style={styles.input} 
-            placeholder='Escribe acá'
-            onChangeText={t => setText(t)}
-            defaultValue={text}
-          />
-          <TouchableWithoutFeedback
-            style={styles.TouchableOpacity}
-            onPress={() => {
-              setSubmit(text)
-              alert('Texto enviado con exito')
-            }}
-          >
-            <View style={styles.view}><Text>Aceptar</Text></View>
-          </TouchableWithoutFeedback>
-        </ScrollView>
+        <FlatList
+          data={[
+            { key: '1', name: 'Eraldo'},
+            { key: '2', name: 'galinha'},
+            { key: '3', name: 'ganso'},
+            { key: '4', name: 'cachorro'},
+            { key: '5', name: 'pato'},
+          ]}
+          renderItem={({ item }) => <Text style={styles.item}>{item.name}</Text>}
+        />
       </View>
   );
 };
 
 const styles = StyleSheet.create({
-  TouchableOpacity: {
-    backgroundColor: 'red'
-  },
-  view: {
-    height: 40,
-    width: 70
-  },
-  input: {
-    height: 40,
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    width: width
-  },
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    paddingVertical: 22
   },
-  scrollView: {
-    width: Dimensions.get('window').width
+  item: {
+    padding: 10,
+    fontSize: 22,
+    height: 50,
+    borderBottomColor: '#ccc',
+    borderBottomWidth: 1
   }
 });
 
