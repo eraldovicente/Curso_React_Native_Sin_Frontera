@@ -5,7 +5,8 @@ import {
   Text,
   TextInput,
   Dimensions,
-  Button
+  Button,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 const width = Dimensions.get('window').width
@@ -25,13 +26,15 @@ const App = () => {
           onChangeText={t => setText(t)}
           defaultValue={text}
         />
-        <Button 
-          title="Aceptar"
+        <TouchableWithoutFeedback
+          style={styles.TouchableOpacity}
           onPress={() => {
             setSubmit(text)
             alert('Texto enviado con exito')
           }}
-        />
+        >
+          <View style={styles.view}><Text>Aceptar</Text></View>
+        </TouchableWithoutFeedback>
       </View>
 
     </>
@@ -39,6 +42,13 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  TouchableOpacity: {
+    backgroundColor: 'red'
+  },
+  view: {
+    height: 40,
+    width: 70
+  },
   input: {
     height: 40,
     borderBottomColor: '#ccc',
