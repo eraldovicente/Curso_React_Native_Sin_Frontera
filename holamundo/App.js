@@ -14,7 +14,7 @@ const Texto = ( ) => {
   }
 
   return (
-    <Text style={{fontSize: 50}} onPress={actualizaTexto}>{texto}</Text>
+    <Text style={styles.text} onPress={actualizaTexto}>{texto}</Text>
   )
 }
 
@@ -30,6 +30,10 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  text: {
+    color: 'red',
+    fontSize: 25
+  },
   container: {
     flex: 1,
     backgroundColor: '#FFF',
